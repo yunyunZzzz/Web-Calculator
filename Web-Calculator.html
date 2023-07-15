@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8"/>
+    <style>
+        table{border-style:none ; font-size: x-large;}
+        button{text-align:center;width:70px; height:30px ;padding: 5px 15px;}
+        .cellborder{border-style:none ; background-color: white;}
+        #checkButton{width:295px ; height: 30px;}
+
+    </style>
+
+    <script>
+        function equal(){
+            document.getElementById('resultSpace').innerHTML= eval(document.getElementById('space').innerHTML); 
+        }
+
+        function clearAll(){
+            document.getElementById('resultSpace').innerHTML= '' ;
+            document.getElementById('space').innerHTML= '' ;
+        }
+    </script>
+
+  </head>
+
+  <body>
+      <table>
+          <caption><h4><b>My Calculator</b></h4></caption>
+          <tr>
+            <td class="cellborder">Result:</td>
+            <td colspan="3" class="cellborder" id="resultSpace" align="center"></td>
+          </tr>
+          <tr>
+            <td class="cellborder">Input:</td>
+            <td colspan="3" class="cellborder" id="space" align="center"></td>
+          </tr>
+          <tr>
+            <td><button type="button" onclick="clearAll()" >Clear</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='(' ;">(</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+=')' ;">)</button></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='1' ;">1</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='2' ;">2</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='3' ;">3</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='+' ;">+</button></td>
+          </tr>
+          <tr>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='4' ;">4</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='5' ;">5</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='6' ;">6</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='-' ;">-</button></td>
+          </tr>
+          <tr>
+            <td><button type="button"  onclick="document.getElementById('space').innerHTML+='7' ;">7</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='8' ;">8</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='9' ;">9</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='*' ;">&times;</button></td>
+          </tr>
+          <tr>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='.' ;">.</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='0' ;">0</button></td>
+            <td><button type="button" onclick="equal()">=</button></td>
+            <td><button type="button" onclick="document.getElementById('space').innerHTML+='/' ;">&divide;</button></td>
+          </tr>
+          <tr>
+              <td colspan="4"><button type="button" id="checkButton" onclick="
+                var finalResult = parseFloat(document.getElementById('resultSpace').innerHTML) ;
+                switch(true){
+                    case (finalResult>0) && (finalResult%3==0) :
+                        document.getElementById('resultSpace').innerHTML='Positive(3)';
+                        break ;
+                    case (document.getElementById('resultSpace').innerHTML=='') :
+                        document.getElementById('resultSpace').innerHTML='No result yet';
+                        break ;
+                    case (finalResult>0) :
+                        document.getElementById('resultSpace').innerHTML='Positive';
+                        break ;
+                    case (finalResult<0) :
+                        document.getElementById('resultSpace').innerHTML='Negative';
+                        break ;
+                    case (finalResult==0) :
+                        document.getElementById('resultSpace').innerHTML='Zero' ;
+                        break ;
+                }
+              ">Check my result</button></td>
+          </tr>
+      </table>
+
+  </body>
+</html>
