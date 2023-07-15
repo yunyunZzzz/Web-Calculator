@@ -1,7 +1,8 @@
 # Web-Calculator
 
 ### This "Web-Calculator" is a basic tool that has the system of a normal arithmetic calculator, made only with HTML, CSS and JavaScript.
->CONTRIBUTIONS ARE WELCOME ! [color=#E5C8DF]
+>CONTRIBUTIONS ARE WELCOME !
+
 ## Technology used
 - HTML5
 - CSS3
